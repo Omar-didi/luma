@@ -3,19 +3,60 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary: #ffe156;
+  --bg-secondary: #613dc1;
+  --colorBlack: #1C1C1C;
+  --colorWhite: #FAFAFF;
+  --colorRed: #F71735;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.caveat {
+  font-family: "Caveat", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-secundary);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-black);
+}
+
+.butto-submit {
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.butto-submit:hover {
+  box-shadow: 0 3px 14px -5px var(--colorBlack);
+}
+
+.butto-submit::before {
+  content: "";
+  width: 2rem;
+  height: 6rem;
+  transform: translate(-50%, -50%) rotateZ(45deg);
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  filter: blur(4px);
+  opacity: 0.4;
+  animation: butt 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+  animation-delay: 2s;
+}
+
+@keyframes butt {
+  0% {
+    left: -10%;
+  }
+  100% {
+    left: 110%;
+  }
 }

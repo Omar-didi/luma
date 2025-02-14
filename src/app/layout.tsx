@@ -1,16 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Caveat, Kalam } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
+
+const kalam = Kalam({
+  subsets: ["latin"], // Define el idioma
+  weight: ["400", "700"], // Opcional: selecciona los pesos
+  variable: "--font-secundary", // Define la variable CSS
 });
+const caveat = Caveat({
+  variable: "--font-primary",
+  subsets: ["latin"]
+})
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,9 +35,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      
+      <body className={`${kalam.variable} ${caveat.variable} antialiased`}>
         {children}
       </body>
     </html>

@@ -8,9 +8,18 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        primary: 'var(--font-primary)',
+        secondary: 'var(--font-secundary)'
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: '#FFE156',
+        secondary: '#613DC1',
+        colorBlack: '#1C1C1C',
+        colorWhite: '#FAFAFF',
+        colorRed: '#F71735'
       },
     },
   },
