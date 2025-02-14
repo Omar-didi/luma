@@ -1,5 +1,5 @@
 import mongoose, { Schema, model, models } from "mongoose";
-
+void mongoose
 interface IFormInterface {
   nombre: string;
   telefono?: string;
